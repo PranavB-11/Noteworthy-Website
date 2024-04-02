@@ -332,3 +332,11 @@ html, body {
   text-align: center;
   width: 100%;
 }
+
+.member-image {
+  width: 100%; /* Makes the image fill the card width */
+  height: 200px; /* Fixed height for the images */
+  object-fit: cover; /* Ensures the image covers the area, might crop it */
+  border-radius: 5px; /* Matches your placeholder's border-radius */
+  margin-bottom: 15px; /* Space between the image and the member name */
+}

@@ -113,21 +113,23 @@ function Members() {
         <h1>Members</h1>
         <div className="members-grid">
           {members.map((member, index) => (
-            <div key={index} className="member-card" onClick={() => setSelectedMemberIndex(index)}>
-              <div className="member-image-placeholder"></div>
-              <h2>{member.name}</h2>
-              <p>{member.info}</p>
-            </div>
+          <div key={index} className="member-card" onClick={() => setSelectedMemberIndex(index)}>
+            {/* Name images based on what's below (e.g. image1, image2, etc.) */}
+            <img src={`template${index + 1}.jpg`} alt={member.name} className="member-image"/>
+            <h2>{member.name}</h2>
+            <p>{member.info}</p>
+          </div>
           ))}
         </div>
         {selectedMemberIndex !== null && (
         <MemberModal
           member={members[selectedMemberIndex]}
+          imageIndex={selectedMemberIndex + 1} // Assuming your images start from template1.jpg
           onClose={() => setSelectedMemberIndex(null)}
           onNext={showNextMember}
           onPrevious={showPreviousMember}
         />
-      )}
+        )}
       </div>
 
     </div>
@@ -145,30 +147,32 @@ function Members() {
     </div>
   );}
 
-function MemberModal({ member, onClose, onPrevious, onNext }) {
-  if (!member) return null;
-
-
-  const handleBackdropClick = (e) => {
-    onClose();
-  };
-
-  const handleContentClick = (e) => {
-    e.stopPropagation(); 
-  };
-
-  return (
-    <div className="modal-backdrop" onClick={handleBackdropClick}>
-      <div className="modal-content" onClick={handleContentClick}>
-        <button className="modal-close-button" onClick={onClose}>X</button>
-        <div className="modal-nav-left" onClick={(e) => { e.stopPropagation(); onPrevious(); }}>&lt;</div>
-        <div className="modal-nav-right" onClick={(e) => { e.stopPropagation(); onNext(); }}>&gt;</div>
-        
-        <h2>{member.name}</h2>
-        <p>{member.info}</p>
+  function MemberModal({ member, imageIndex, onClose, onPrevious, onNext }) {
+    if (!member) return null;
+  
+    // Constructing the image URL based on the passed index. Adjust the path as necessary.
+    // This assumes that your images are stored in the public folder and are named sequentially (e.g., template1.jpg, template2.jpg, etc.).
+    const imageUrl = `template${imageIndex}.jpg`;
+  
+    return (
+      <div className="modal-backdrop" onClick={onClose}>
+        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <button className="modal-close-button" onClick={onClose}>X</button>
+          <div className="modal-nav-left" onClick={(e) => { e.stopPropagation(); onPrevious(); }}>&lt;</div>
+          <div className="modal-nav-right" onClick={(e) => { e.stopPropagation(); onNext(); }}>&gt;</div>
+          
+          <div className="modal-body">
+            <img src={imageUrl} alt={`Member ${imageIndex}`} className="modal-member-image"/>
+            <div className="modal-text-content">
+              <h2>{member.name}</h2>
+              <p>{member.info}</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
+  
+  
 
 export default App;
