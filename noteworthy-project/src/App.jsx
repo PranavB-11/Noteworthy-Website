@@ -32,6 +32,7 @@ function App() {
         <h2 className="favorites-heading">A Few of Our Favorites</h2>
         <Carousel videos={videoIds} />
       </div>
+      <Members />
     </div>
   );
 }
@@ -62,7 +63,6 @@ function Carousel({ videos }) {
     ],
   };
   
-  
   return (
     <div className="carousel-container">
       <Slider {...settings}>
@@ -81,6 +81,48 @@ function Carousel({ videos }) {
     </div>
   );
 }
+function Members() {
+  // Dummy data for member information
+  const members = [
+    { name: 'Member 1', info: 'Member 1 Info' },
+    { name: 'Member 2', info: 'Member 2 Info' },
+    { name: 'Member 3', info: 'Member 3 Info' },
+    { name: 'Member 4', info: 'Member 4 Info' },
+    { name: 'Member 5', info: 'Member 5 Info' },
+    { name: 'Member 6', info: 'Member 6 Info' }
+  ];
 
+  return (
+    <div className="members-contact-container">
+      {/* Members Section */}
+      <div className="members-section">
+        <h1>Members</h1>
+        <div className="member-cards-container">
+          {/* Render member cards in a grid layout */}
+          <div className="members-grid">
+            {members.map((member, index) => (
+              <div key={index} className="member-card">
+                <div className="member-image-placeholder"></div>
+                <h2>{member.name}</h2>
+                <p>{member.info}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Contact Us Section */}
+      <div className="contact-section">
+        <h1>Contact Us</h1>
+        <div className="contact-card">
+          <div className="social-media-placeholder">
+            Insta
+            {/* Insert Instagram or other social media icons as needed */}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default App;
