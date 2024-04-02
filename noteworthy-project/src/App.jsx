@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -91,25 +91,46 @@ function Members() {
     { name: 'Member 5', info: 'Member 5 Info' },
     { name: 'Member 6', info: 'Member 6 Info' }
   ];
+  const [selectedMemberIndex, setSelectedMemberIndex] = useState(null);
+
+  const showNextMember = () => {
+    setSelectedMemberIndex((currentIndex) =>
+      (currentIndex + 1) % members.length
+    );
+  };
+
+  const showPreviousMember = () => {
+    setSelectedMemberIndex((currentIndex) =>
+      (currentIndex - 1 + members.length) % members.length
+    );
+  };
 
   return (
     <div className="members-contact-container">
       {/* Members Section */}
+      <div className="members-contact-container">
       <div className="members-section">
         <h1>Members</h1>
-        <div className="member-cards-container">
-          {/* Render member cards in a grid layout */}
-          <div className="members-grid">
-            {members.map((member, index) => (
-              <div key={index} className="member-card">
-                <div className="member-image-placeholder"></div>
-                <h2>{member.name}</h2>
-                <p>{member.info}</p>
-              </div>
-            ))}
-          </div>
+        <div className="members-grid">
+          {members.map((member, index) => (
+            <div key={index} className="member-card" onClick={() => setSelectedMemberIndex(index)}>
+              <div className="member-image-placeholder"></div>
+              <h2>{member.name}</h2>
+              <p>{member.info}</p>
+            </div>
+          ))}
         </div>
+        {selectedMemberIndex !== null && (
+        <MemberModal
+          member={members[selectedMemberIndex]}
+          onClose={() => setSelectedMemberIndex(null)}
+          onNext={showNextMember}
+          onPrevious={showPreviousMember}
+        />
+      )}
       </div>
+
+    </div>
 
       {/* Contact Us Section */}
       <div className="contact-section">
@@ -120,6 +141,31 @@ function Members() {
             {/* Insert Instagram or other social media icons as needed */}
           </div>
         </div>
+      </div>
+    </div>
+  );}
+
+function MemberModal({ member, onClose, onPrevious, onNext }) {
+  if (!member) return null;
+
+
+  const handleBackdropClick = (e) => {
+    onClose();
+  };
+
+  const handleContentClick = (e) => {
+    e.stopPropagation(); 
+  };
+
+  return (
+    <div className="modal-backdrop" onClick={handleBackdropClick}>
+      <div className="modal-content" onClick={handleContentClick}>
+        <button className="modal-close-button" onClick={onClose}>X</button>
+        <div className="modal-nav-left" onClick={(e) => { e.stopPropagation(); onPrevious(); }}>&lt;</div>
+        <div className="modal-nav-right" onClick={(e) => { e.stopPropagation(); onNext(); }}>&gt;</div>
+        
+        <h2>{member.name}</h2>
+        <p>{member.info}</p>
       </div>
     </div>
   );

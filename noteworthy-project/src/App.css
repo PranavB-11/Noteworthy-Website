@@ -163,66 +163,139 @@ html, body {
 
 
 
-
-
-/* this is the css for the memembrs*/
 .members-contact-container {
-  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  width: 100%; 
 }
 
 .members-section {
-  background-color: #123456; /* Replace with your preferred color */
-  padding: 20px;
-  text-align: center;
-}
-
-.member-cards-container {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-}
-
-.member-card {
-  background-color: #fff;
-  width: 150px; /* Adjust width as necessary */
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.member-image-placeholder {
-  height: 150px; /* Adjust height as necessary */
-  background-color: #eaeaea; /* Placeholder color */
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.contact-section {
-  background-color: #f2ca6b; /* Replace with your preferred color */
-  padding: 20px;
-  text-align: center;
-}
-
-.contact-card {
-  background-color: #fff;
-  width: 50%; /* Adjust width as necessary */
-  margin: 20px auto;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.social-media-placeholder {
-  /* Style for your social media links or icons */
-  font-size: 1.5em;
+  width: 100%; 
+  max-width: 1200px;
+  margin: auto; 
+  padding: 20px; 
 }
 
 .members-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px; /* Adjust spacing between members */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 10px; 
+  justify-content: center; 
+  width: 100%; 
 }
 
 .member-card {
-  /* Your existing member card styles */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px; 
+  text-align: center; 
+}
+
+.member-image-placeholder {
+  height: 200px; 
+  background-color: #eaeaea; 
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 1024px) {
+  .members-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .members-grid {
+    grid-template-columns: 1fr; 
+  }
+}
+
+
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: auto; 
+  max-width: calc(100vw - 40px); 
+  height: auto; 
+  max-height: 80vh; 
+  box-sizing: border-box; 
+  overflow: hidden; 
+  position: relative; 
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+}
+
+
+.modal-nav-left, .modal-nav-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1050;
+}
+
+.modal-nav-left {
+  left: 10px;
+}
+
+.modal-nav-right {
+  right: 10px; 
+}
+
+
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-close-button:hover {
+  color: grey;
+}
+
+
+.member-card:hover {
+  transform: scale(1.05); 
+  cursor: pointer; 
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%; 
+    max-width: 95%; 
+    padding: 20px;
+    max-height: 90vh;
+  }
+}
+
+.modal-content h2,
+.modal-content p {
+  text-align: center;
+  width: 100%;
 }
