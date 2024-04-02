@@ -214,3 +214,13 @@ html, body {
   /* Style for your social media links or icons */
   font-size: 1.5em;
 }
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* Adjust spacing between members */
+}
+
+.member-card {
+  /* Your existing member card styles */
+}

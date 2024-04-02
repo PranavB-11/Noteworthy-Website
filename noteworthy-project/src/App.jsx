@@ -32,6 +32,7 @@ function App() {
         <h2 className="favorites-heading">A Few of Our Favorites</h2>
         <Carousel videos={videoIds} />
       </div>
+      <Members />
     </div>
   );
 }
@@ -62,7 +63,6 @@ function Carousel({ videos }) {
     ],
   };
   
-  
   return (
     <div className="carousel-container">
       <Slider {...settings}>
@@ -81,26 +81,33 @@ function Carousel({ videos }) {
     </div>
   );
 }
+function Members() {
+  // Dummy data for member information
+  const members = [
+    { name: 'Member 1', info: 'Member 1 Info' },
+    { name: 'Member 2', info: 'Member 2 Info' },
+    { name: 'Member 3', info: 'Member 3 Info' },
+    { name: 'Member 4', info: 'Member 4 Info' },
+    { name: 'Member 5', info: 'Member 5 Info' },
+    { name: 'Member 6', info: 'Member 6 Info' }
+  ];
 
-
-
-
-/* this is the code for the memebrs*/
-function Members(){
-  return(
-     
-<div className="members-contact-container">
+  return (
+    <div className="members-contact-container">
       {/* Members Section */}
       <div className="members-section">
         <h1>Members</h1>
         <div className="member-cards-container">
-          {/* Example Member Card */}
-          <div className="member-card">
-            <div className="member-image-placeholder"></div>
-            <h2>Name</h2>
-            <p>Member Info</p>
+          {/* Render member cards in a grid layout */}
+          <div className="members-grid">
+            {members.map((member, index) => (
+              <div key={index} className="member-card">
+                <div className="member-image-placeholder"></div>
+                <h2>{member.name}</h2>
+                <p>{member.info}</p>
+              </div>
+            ))}
           </div>
-          {/* Duplicate the member card for additional members */}
         </div>
       </div>
 
@@ -115,9 +122,7 @@ function Members(){
         </div>
       </div>
     </div>
-
   );
 }
-
 
 export default App;
