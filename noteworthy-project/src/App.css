@@ -20,8 +20,10 @@ html, body {
   scroll-snap-align: start;
 }
 
+/*changed!!*/
 .main-block {
-  background-color: black;
+  background-image: url("group1.jpg");
+  background-size: cover;
   justify-content: center;
 }
 
