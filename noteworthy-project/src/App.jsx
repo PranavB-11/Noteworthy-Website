@@ -83,4 +83,41 @@ function Carousel({ videos }) {
 }
 
 
+
+
+/* this is the code for the memebrs*/
+function Members(){
+  return(
+     
+<div className="members-contact-container">
+      {/* Members Section */}
+      <div className="members-section">
+        <h1>Members</h1>
+        <div className="member-cards-container">
+          {/* Example Member Card */}
+          <div className="member-card">
+            <div className="member-image-placeholder"></div>
+            <h2>Name</h2>
+            <p>Member Info</p>
+          </div>
+          {/* Duplicate the member card for additional members */}
+        </div>
+      </div>
+
+      {/* Contact Us Section */}
+      <div className="contact-section">
+        <h1>Contact Us</h1>
+        <div className="contact-card">
+          <div className="social-media-placeholder">
+            Insta
+            {/* Insert Instagram or other social media icons as needed */}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  );
+}
+
+
 export default App;
