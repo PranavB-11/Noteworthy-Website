@@ -12,7 +12,7 @@ html, body {
 
 .main-block, .about-us-block {
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 700px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,24 +20,26 @@ html, body {
   scroll-snap-align: start;
 }
 
-/*changed!!*/
 .main-block {
   background-image: url("group1.jpg");
+  height: 700px;
   background-size: cover;
   justify-content: center;
 }
 
 .about-us-block {
   background-color: white;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .about-us-heading {
+  position: relative;
   font-size: 4rem;
   color: black;
   margin-bottom: 20px; 
@@ -51,14 +53,31 @@ html, body {
 }
 
 .about-us-text {
-  font-size: 2.1rem;
+  font-size: 25px;
   color: black;
   line-height: 1.6;
-  max-width: 50%; 
+  max-width: 70%; 
   text-align: left; 
 }
 
-
+.highlight-container-about {
+  position: relative;
+  display: inline-block;
+}
+.highlight-container-about:before {
+  content: " ";
+  display: block;
+  height: 30%;
+  width: 100%;
+  margin-left: -3px;
+  margin-right: -3px;
+  position: absolute;
+  background: #ffd500;
+  transform: rotate(2deg);
+  top: 70px;
+  border-radius: 20% 25% 20% 24%;
+  padding: 10px 3px 3px 10px;
+}
 
 .noteworthy {
   font-family: 'Montserrat', sans-serif;
@@ -105,6 +124,25 @@ html, body {
   min-height: 100vh; 
 }
 
+.highlight-container-fav {
+  position: relative;
+  display: inline-block;
+}
+.highlight-container-fav:before {
+  content: " ";
+  display: block;
+  height: 30%;
+  width: 100%;
+  margin-left: -3px;
+  margin-right: -3px;
+  position: absolute;
+  background: #ffd500;
+  transform: rotate(2deg);
+  top: 20px;
+  border-radius: 20% 25% 20% 24%;
+  padding: 10px 3px 3px 10px;
+}
+
 .carousel-container {
   max-width: 40%;
   margin: auto;
@@ -149,18 +187,13 @@ html, body {
   bottom: -30px;
 }
 
-
-
-
 .favorites-heading {
   font-size: 3rem;
   color: black;
   margin-top: 0; 
   width: 100%; 
+  position:relative;
 }
-
-
-
 
 
 .members-contact-container {

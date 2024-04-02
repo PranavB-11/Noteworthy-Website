@@ -23,13 +23,13 @@ function App() {
         </div>
       </div>
       <div className="about-us-block">
-        <h2 className="about-us-heading">About Us</h2>
+        <span class="highlight-container-about"><h2 className="about-us-heading">About Us</h2></span>
         <p className="about-us-text">
           We’re a lower-voices a cappella group known for our fun performances and fresh takes on popular songs! It always feels sunny when we perform, and not just because of our golden vests! Since our founding in 2000, we’ve gone million-view-viral on YouTube multiple times, released an album entirely composed of original songs, and performed at the 2022 UC Berkeley commencement.
         </p>
       </div>
       <div className="favorites-block">
-        <h2 className="favorites-heading">A Few of Our Favorites</h2>
+        <span class="highlight-container-fav"><h2 className="favorites-heading">A Few of Our Favorites</h2></span>
         <Carousel videos={videoIds} />
       </div>
       <Members />
