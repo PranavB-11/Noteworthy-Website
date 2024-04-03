@@ -84,12 +84,15 @@ function Carousel({ videos }) {
 function Members() {
   // Dummy data for member information
   const members = [
-    { name: 'Member 1', info: 'Member 1 Info' },
-    { name: 'Member 2', info: 'Member 2 Info' },
-    { name: 'Member 3', info: 'Member 3 Info' },
-    { name: 'Member 4', info: 'Member 4 Info' },
-    { name: 'Member 5', info: 'Member 5 Info' },
-    { name: 'Member 6', info: 'Member 6 Info' }
+    { name: 'Maya Rotenberg', info: 'Pronouns: she/her  Voice Part: Tenor 1'},
+    { name: 'Amanda Sakimura', info:'pronouns: she/her voice Part: Tenor 1'},
+    { name: 'Alex Pease', info: 'pronouns: N/A voice Part: Bass' },
+    { name: 'Bhaskar Roberts', info: 'pronouns: Him/He voice Part: Tenor 2'},
+    { name: 'Ellington Chen', info: 'pronouns: Him/He voice Part: Baritone' },
+    { name: 'Justin Wong', info: 'pronouns: Him/He voice Part: Baritone'},
+    { name: 'Jerry', info: 'pronouns: Him/He voice Part: Baritone' },
+    { name: 'Athena Liu', info: 'pronouns: they/he voice Part: Tenor 1' },
+    { name: 'Stephanus Yang', info: 'pronouns: he/him voice Part: Tenor 1' },
   ];
   const [selectedMemberIndex, setSelectedMemberIndex] = useState(null);
 
