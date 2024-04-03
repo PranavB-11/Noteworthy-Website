@@ -85,14 +85,20 @@ function Members() {
   // Dummy data for member information
   const members = [
     { name: 'Maya Rotenberg', info: 'Pronouns: she/her  Voice Part: Tenor 1'},
-    { name: 'Amanda Sakimura', info:'pronouns: she/her voice Part: Tenor 1'},
-    { name: 'Alex Pease', info: 'pronouns: N/A voice Part: Bass' },
-    { name: 'Bhaskar Roberts', info: 'pronouns: Him/He voice Part: Tenor 2'},
-    { name: 'Ellington Chen', info: 'pronouns: Him/He voice Part: Baritone' },
-    { name: 'Justin Wong', info: 'pronouns: Him/He voice Part: Baritone'},
-    { name: 'Jerry', info: 'pronouns: Him/He voice Part: Baritone' },
-    { name: 'Athena Liu', info: 'pronouns: they/he voice Part: Tenor 1' },
-    { name: 'Stephanus Yang', info: 'pronouns: he/him voice Part: Tenor 1' },
+    { name: 'Amanda Sakimura', info:'pronouns: she/her Voice Part: Tenor 1'},
+    { name: 'Alex Pease', info: 'pronouns: N/A Voice Part: Bass' },
+    { name: 'Bhaskar Roberts', info: 'pronouns: Him/He Voice Part: Tenor 2'},
+    { name: 'Ellington Chen', info: 'pronouns: Him/He Voice Part: Baritone' },
+    { name: 'Justin Wong', info: 'pronouns: Him/He Voice Part: Baritone'},
+    { name: 'Jerry', info: 'pronouns: Him/He Voice Part: Baritone' },
+    { name: 'Athena Liu', info: 'pronouns: they/he Voice Part: Tenor 1' },
+    { name: 'Stephanus Yang', info: 'pronouns: he/him Voice Part: Tenor 1' },
+  { name: 'Eddie Cekici', info: 'pronouns: He/Him Voice Part: Bass and Vocal Percussion' },
+  { name: 'Andrew Tran', info: 'pronouns: he/him Voice Part: Tenor 2' },
+  { name: 'Ethan Jang', info: 'pronouns: He/Him/His Voice Part: Bass' },
+  { name: 'Tom Guan', info: 'pronouns: he/him VoicePart: Baritone' },
+  { name: 'Madlen Jalalyan', info: 'pronouns: she/her Voice Part: Tenor 1' },
+  { name: 'Christopher Yuan', info: 'pronouns: He/him Voice Part: Tenor 2' }
   ];
   const [selectedMemberIndex, setSelectedMemberIndex] = useState(null);
 
@@ -118,7 +124,7 @@ function Members() {
           {members.map((member, index) => (
           <div key={index} className="member-card" onClick={() => setSelectedMemberIndex(index)}>
             {/* Name images based on what's below (e.g. image1, image2, etc.) */}
-            <img src={`template${index + 1}.jpg`} alt={member.name} className="member-image"/>
+            <img src={`/images/template${index + 1}.jpg`} alt={member.name} className="member-image"/>
             <h2>{member.name}</h2>
             <p>{member.info}</p>
           </div>
@@ -155,7 +161,7 @@ function Members() {
   
     // Constructing the image URL based on the passed index. Adjust the path as necessary.
     // This assumes that your images are stored in the public folder and are named sequentially (e.g., template1.jpg, template2.jpg, etc.).
-    const imageUrl = `template${imageIndex}.jpg`;
+    const imageUrl = `images/template${imageIndex}.jpg`;
   
     return (
       <div className="modal-backdrop" onClick={onClose}>
@@ -169,6 +175,7 @@ function Members() {
             <div className="modal-text-content">
               <h2>{member.name}</h2>
               <p>{member.info}</p>
+              
             </div>
           </div>
         </div>
