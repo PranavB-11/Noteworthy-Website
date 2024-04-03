@@ -124,7 +124,7 @@ function Members() {
           {members.map((member, index) => (
           <div key={index} className="member-card" onClick={() => setSelectedMemberIndex(index)}>
             {/* Name images based on what's below (e.g. image1, image2, etc.) */}
-            <img src={`/images/template${index + 1}.jpg`} alt={member.name} className="member-image"/>
+            <img src={`template${index + 1}.jpg`} alt={member.name} className="member-image"/>
             <h2>{member.name}</h2>
             <p>{member.info}</p>
           </div>
