@@ -295,7 +295,8 @@ function Members() {
   
     // Constructing the image URL based on the passed index. Adjust the path as necessary.
     // This assumes that your images are stored in the public folder and are named sequentially (e.g., template1.jpg, template2.jpg, etc.).
-    const imageUrl = `images/template${imageIndex}.jpg`;
+    const imageUrl = `template${imageIndex}.jpg`;
+
   
     return (
       <div className="modal-backdrop" onClick={onClose}>

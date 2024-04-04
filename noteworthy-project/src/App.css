@@ -331,6 +331,8 @@ html, body {
 .modal-content p {
   text-align: center;
   width: 100%;
+
+
 }
 
 .member-image {
@@ -339,4 +341,11 @@ html, body {
   object-fit: cover; /* Ensures the image covers the area, might crop it */
   border-radius: 5px; /* Matches your placeholder's border-radius */
   margin-bottom: 15px; /* Space between the image and the member name */
+}
+.modal-member-image{
+  height: 50%;
+  width: 30%;
+  border-radius: 5px;
+  align-items: center;
+  object-fit: cover;
 }
