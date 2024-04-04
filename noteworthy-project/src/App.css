@@ -346,6 +346,8 @@ html, body {
 .modal-content h2, .modal-content p {
   text-align: center;
   width: 100%;
+
+
 }
 
 .member-image {
@@ -357,4 +359,11 @@ html, body {
 
 * {
   box-sizing: border-box;
+}
+.modal-member-image{
+  height: 50%;
+  width: 30%;
+  border-radius: 5px;
+  align-items: center;
+  object-fit: cover;
 }

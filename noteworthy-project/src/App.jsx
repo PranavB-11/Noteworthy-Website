@@ -253,7 +253,7 @@ function Members() {
       <div className="members-contact-container">
       <div className="members-section">
         <div className="members-section-header">
-          <span className="highlight-container-members"><h1>Members</h1></span>
+        <span className="highlight-container-members"><h1>Members</h1></span>
         </div>
         <div className="members-grid">
           {members.map((member, index) => (
