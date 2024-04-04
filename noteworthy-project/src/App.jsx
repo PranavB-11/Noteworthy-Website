@@ -252,7 +252,9 @@ function Members() {
       {/* Members Section */}
       <div className="members-contact-container">
       <div className="members-section">
-        <h1>Members</h1>
+        <div className="members-section-header">
+          <span className="highlight-container-members"><h1>Members</h1></span>
+        </div>
         <div className="members-grid">
           {members.map((member, index) => (
           <div key={index} className="member-card" onClick={() => setSelectedMemberIndex(index)}>
@@ -293,9 +295,7 @@ function Members() {
   function MemberModal({ member, imageIndex, onClose, onPrevious, onNext }) {
     if (!member) return null;
   
-    // Constructing the image URL based on the passed index. Adjust the path as necessary.
-    // This assumes that your images are stored in the public folder and are named sequentially (e.g., template1.jpg, template2.jpg, etc.).
-    const imageUrl = `images/template${imageIndex}.jpg`;
+    const imageUrl = `template${imageIndex}.jpg`;
   
     return (
       <div className="modal-backdrop" onClick={onClose}>
@@ -304,23 +304,21 @@ function Members() {
           <div className="modal-nav-left" onClick={(e) => { e.stopPropagation(); onPrevious(); }}>&lt;</div>
           <div className="modal-nav-right" onClick={(e) => { e.stopPropagation(); onNext(); }}>&gt;</div>
           
-          <div className="modal-body">
-            <img src={imageUrl} alt={`Member ${imageIndex}`} className="modal-member-image"/>
-            <div className="modal-text-content">
-              <h2>{member.name}</h2>
+          <img src={imageUrl} alt={`Member ${member.name}`} className="modal-member-image"/>
+          <div className="modal-text-content">
+            <h2>{member.name}</h2>
             <p>{member.pronouns}</p>
             <p>{member.majorMinor}</p>
             <p>{member.semesterInBerkeley}</p>
             <p>{member.semesterInNoteworthy}</p>
+            <p>{member.interests}</p>
             <p>{member.bio}</p>
-
-              
-            </div>
           </div>
         </div>
       </div>
     );
   }
+  
   
   
 
