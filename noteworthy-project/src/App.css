@@ -29,7 +29,7 @@ html, body {
 .about-us-block {
   position: relative;
   background-color:#add8e6;
-  height: 500px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -132,7 +132,7 @@ html, body {
   justify-content: center;
   text-align: center;
   padding: 20px 0;
-  min-height: 500px;
+  min-height: 600px;
 }
 
 .favorites-block h2 {
@@ -246,11 +246,6 @@ html, body {
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.members-section img {
-  border: 2px solid #ffd500;
-  padding: 7px;
-  border-radius: 5%;
-}
 .members-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -342,6 +337,9 @@ html, body {
   height: auto; 
   margin-left: 20px;
   margin-right: 20px; 
+  border: 2px solid #ffd500;
+  padding: 7px;
+  border-radius: 5%;
 }
 
 .modal-text-content {
@@ -410,6 +408,8 @@ html, body {
   height: 300px;
   object-fit: cover; 
   border-radius: 5px; 
+  border: 2px solid #ffd500;
+  padding: 7px;
 }
 
 * {
