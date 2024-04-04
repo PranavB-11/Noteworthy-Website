@@ -254,7 +254,7 @@ function Members() {
       <div className="members-section">
         <div className="members-section-header">
         <span className="highlight-container-members"><h1>Members</h1></span>
-        </div>
+      </div>
         <div className="members-grid">
           {members.map((member, index) => (
           <div key={index} className="member-card" onClick={() => setSelectedMemberIndex(index)}>

@@ -129,17 +129,20 @@ html, body {
 .highlight-container-fav {
   position: relative;
   display: inline-block;
+  z-index: 1; /* Ensure the text is above the highlight */
 }
 
 .highlight-container-fav:before {
-  content: " ";
+  content: "";
   display: block;
   height: 30%;
   width: 100%;
   position: absolute;
   background: #ffd500;
   transform: rotate(2deg);
-  top: 20px;
+  top: 25px; /* Adjust this value as needed to avoid overlap */
+  left: 0;
+  z-index: -1; /* Position the highlight behind the text */
   border-radius: 20% 25% 20% 24%;
   padding: 10px 3px 3px 10px;
 }
